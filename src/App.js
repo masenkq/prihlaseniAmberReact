@@ -1,16 +1,27 @@
-import '../src/styles/main.css';
-import Header from '../src/components/header';
-import LoginForm from '../src/components/LoginForm';
-import Footer from '../src/components/Footer';
-import Toast from '../src/components/ToastContainer';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import RegisterPage from './pages/RegisterPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import LoginForm from './components/LoginForm';
+import './styles/main.css'
+
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
-            <LoginForm />
+
+            <main>
+                <Routes>
+                    <Route path="/" element={<LoginForm />} />
+                    <Route path="/HomePage" element={<HomePage />} />
+                    {/* další routy */}
+                </Routes>
+            </main>
+
             <Footer />
-            <Toast />
-        </>
+        </BrowserRouter>
     );
 }
 

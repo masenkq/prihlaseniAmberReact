@@ -1,4 +1,5 @@
 import handDrop from '../images/handDrop.svg';
+import React from 'react';
 
 function Footer() {
     return (

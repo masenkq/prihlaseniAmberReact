@@ -1,5 +1,7 @@
+import React from 'react';
+import { Button } from 'antd';
 function CreateAccountButton() {
-    return <button className="btn secondary" type="button">Vytvořit nový účet</button>;
+    return <Button className="btn secondary" type="primary">Vytvořit nový účet</Button>;
 }
 
 export default CreateAccountButton;

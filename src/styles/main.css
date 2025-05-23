@@ -1,3 +1,4 @@
+/*divider nebo*/
 .divider {
     align-items: center;
     text-align: center;
@@ -24,55 +25,41 @@
     font-size: 0.9rem;
 }
 
-.form-container label {
-    display: block;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-    text-align: left;
-    padding-left: 5px;
-    color: var(--Cform-label);
+/* FORM */
+.form-container {
+    position: relative;
+    margin-bottom: 20px;
 }
-.form-container input[type=email],
+
+/* Styl pro všechny inputy */
 .form-container input[type=password],
+.form-container input[type=email],
 .form-container input[type=text] {
     width: 100%;
-    padding: 0.7rem 2.5rem 0.7rem 0.7rem;
-    border: 1px solid var(--Cline);
-    border-radius: 2px;
     background-color: var(--Cbackground);
     outline: none;
     box-sizing: border-box;
-    margin-bottom: 0.6rem;
-}
-.form-container input:focus {
-    border-color: var(--Cborder);
-}
-
+    margin-bottom: 0;
+    font-size: 16px;
+    border-radius: 2px;
+   }
+/* Speciální wrapper pro password s očkem */
 .password-wrapper {
     position: relative;
 }
-.password-wrapper input {
-    width: 100%;
-    padding-right: 2.5rem;
-    border-radius: 8px;
-    background-color: var(--Cpassbgr);
-    border: 1px solid var(--Cline);
-    outline: none;
-}
-.password-wrapper input:focus {
-    border-color: var(--Cborder);
-}
-.password-wrapper button {
+
+.toggle-password {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    user-select: none;
-    padding: 0;
+    font-size: 1rem;
+    color: var(--Cuser);
+}
+
+.form-container input:focus {
+    border-color: var(--Cborder);
 }
 
 /* Box sizing rules */
@@ -105,6 +92,7 @@ body {
 h1, h2, h3, h4,
 button, label {
     line-height: 1.1;
+    text-align: left;
 }
 
 /* A elements that don't have a class get default styles */
@@ -131,6 +119,7 @@ textarea:not([rows]) {
     min-height: 10em;
 }
 
+/* struktura styly a definovani barev*/
 html {
     --Cdivider: #666;
     --Cuser: #333;
@@ -140,9 +129,11 @@ html {
     --Cpassbgr: #d3e2e8;
     --Cform-label: #333;
     --Cblue: #004d80;
+    --Cblue-dark: #0051b3;
     --Cpink: #c0004d;
-}
+    --Cpink-dark: #cc0066;
 
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #d0dde5;
@@ -150,7 +141,6 @@ body {
     padding: 0;
     text-align: center;
 }
-
 header {
     background-color: white;
     padding: 0.5rem 1rem;
@@ -159,12 +149,18 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .logo,
 .main-logo {
     width: auto;
     margin-bottom: 0;
 }
+footer {
+    margin-top: 2rem;
+}
+.footer-img {
+    height: 60px;
+}
+
 
 .login-container {
     max-width: 400px;
@@ -175,7 +171,7 @@ header {
 .login-fields {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 15px;
 }
 
 /* hvezdicka u hesla a emailu */
@@ -183,33 +179,8 @@ header {
     color: red;
 }
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    user-select: none;
-    padding: 0;
-}
 
-.existing-user {
-    font-size: 0.85rem;
-    margin-top: 1.5rem;
-    color: var(--Cuser);
-}
-
-footer {
-    margin-top: 2rem;
-}
-
-.footer-img {
-    height: 60px;
-}
-
+/* buttons prihlasit se, vytvorit novy ucet*/
 .btn {
     padding: 0.7rem;
     border: none;
@@ -218,19 +189,32 @@ footer {
     font-weight: bold;
     font-size: 1rem;
     margin: 0 auto;
-    display: block;
-}
 
+}
 .primary {
     background-color: var(--Cpink);
     color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 0 8px;
 }
-
+.primary:hover, .primary:active {
+    background-color: var(--Cpink-dark);
+}
 .secondary {
     background-color: var(--Cblue);
     color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 0 8px;
+}
+.secondary:hover, .secondary:active {
+    background-color: var(--Cblue-dark);
 }
 
+/* zapomenute heslo */
 .forgot-password,
 .forgot {
     display: block;
@@ -240,39 +224,85 @@ footer {
     text-align: left;
     text-decoration: none;
 }
-
-.error-message {
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ffe0e0;
-    color: #b10000;
-    padding: 1rem 2rem;
-    border: 1px solid #ffaaaa;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+/* */
+.existing-user {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    color: var(--Cuser);
 }
-
-#toast-container {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 9999;
+/*homepage css*/
+.homepage-message {
+    /* Centrování obsahu */
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Rozměry a pozice */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    min-height: 300px;
+
+    /* Styling */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Animace */
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
-.toast {
-    background-color: #333;
-    color: #fff;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+.homepage-message h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.homepage-message p {
+    font-size: 1.25rem;
+    color: #7f8c8d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Animace */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .homepage-message {
+        padding: 1.5rem;
+        min-height: 250px;
+        width: 85%;
+    }
+
+    .homepage-message h1 {
+        font-size: 2rem;
+    }
+
+    .homepage-message p {
+        font-size: 1.1rem;
+    }
 }
