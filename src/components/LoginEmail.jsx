@@ -9,7 +9,7 @@ function LoginEmail() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="zadejte email"
+                placeholder="Zadejte Váš email"
                 required
             />
         </>

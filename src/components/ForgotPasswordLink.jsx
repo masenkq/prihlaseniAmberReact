@@ -1,6 +1,6 @@
 import React from 'react';
 function ForgotPasswordLink() {
-    return <a href="#" className="forgot-password">Zapomenuté heslo</a>;
+    return <a href="#" className="forgot-password">🔐Zapomenuté heslo</a>;
 }
 
 export default ForgotPasswordLink;

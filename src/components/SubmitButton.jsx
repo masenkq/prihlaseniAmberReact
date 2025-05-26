@@ -12,7 +12,7 @@ function SubmitButton() {
     };
 
     return (
-        <Button type="primary" htmlType="submit" onClick={handleClick}>
+        <Button type="primary" htmlType="submit"  className="primary" onClick={handleClick}>
             Přihlásit se
         </Button>
     );
