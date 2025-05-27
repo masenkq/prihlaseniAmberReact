@@ -152,7 +152,6 @@ button, label {
   text-align: left;
   margin-bottom: 0.5rem;
   margin-top: 15px;
-  color: var(--Cpink);
 }
 
 a:not([class]) {
