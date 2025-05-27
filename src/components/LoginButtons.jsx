@@ -9,11 +9,11 @@ import {Link} from "react-router-dom";
 function LoginButtons() {
     return (
         <>
-            <ForgotPasswordLink />
-            <SubmitButton />
-            <Divider text="nebo" />
-            <CreateAccountButton />
-            <ExistingUserInfo />
+            <ForgotPasswordLink/>
+            <SubmitButton/>
+            <Divider text="nebo"/>
+            <CreateAccountButton/>
+            <ExistingUserInfo/>
         </>
     );
 }

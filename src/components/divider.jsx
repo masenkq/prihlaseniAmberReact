@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Divider({ text }) {
+function Divider({text}) {
     return <div className="divider"><span>{text}</span></div>;
 }
 
