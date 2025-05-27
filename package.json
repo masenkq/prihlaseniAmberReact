@@ -16,6 +16,7 @@
   "scripts": {
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "set PUBLIC_URL=.&& react-scripts build",
+    "ci-build": "PUBLIC_URL=. react-scripts build",
     "test": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts test",
     "eject": "react-scripts eject"
   },
