@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Input, Typography} from 'antd';
 import {EyeOutlined, EyeInvisibleOutlined} from '@ant-design/icons';
+import { Input } from 'antd';
 
 function LoginPassword() {
     const [visible, setVisible] = useState(false);
