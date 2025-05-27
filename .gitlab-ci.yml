@@ -1,0 +1,48 @@
+# Přidejte toto na začátek souboru
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_REF_NAME == "production"'
+      when: never # Zabrání duplicitnímu běhu v GitLab CI
+stages:
+  - deploy
+
+variables:
+  FTP_SERVER: "tla01.vas-server.cz"
+  FTP_USER: "studenti"
+  FTP_PASSWORD: "Studenti_2025"
+  DEPLOY_DIR: "prihlaseni-amber-react" # název vaší složky na serveru
+
+# Nasazení produkční verze
+deploy_production:
+  stage: deploy
+  only:
+    - production # spustí se jen při pushnutí do production větve
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq lftp
+  script:
+    - echo "Installing dependencies..."
+    - npm install
+    - echo "Building production version..."
+    - npm run build
+    - echo "Deploying to FTP server..."
+    - lftp -c "
+      set ftp:ssl-allow no;
+      set xfer:clobber on;
+      open ftp://$FTP_SERVER;
+      user $FTP_USER '$FTP_PASSWORD';
+      mkdir -p $DEPLOY_DIR;
+      cd $DEPLOY_DIR;
+      mirror --reverse --delete --verbose build/ .;
+      bye
+      "
+  after_script:
+    - echo "Production deployment completed!"
+
+# Testovací nasazení (volitelné)
+deploy_master:
+  stage: deploy
+  only:
+    - master # spustí se při pushnutí do master větve
+  script:
+    - echo "This would deploy to test/staging environment"
+    # sem můžete přidat podobný deploy skript jako výše, ale do jiné složky

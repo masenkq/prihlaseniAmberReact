@@ -1,0 +1,358 @@
+:root {
+  --Cuser: #333;
+  --Cline: #ccc;
+  --Cbackground: #fff;
+  --Cborder: #aaa;
+  --Cpassbgr: #d3e2e8;
+  --Cform-label: #333;
+  --Cblue: #004d80;
+  --Cblue-dark: #0051b3;
+  --Cpink: #c0004d;
+  --Cpink-dark: #cc0066;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  color: var(--Cuser);
+  font-weight: 500;
+  cursor: default;
+}
+.divider::before, .divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: var(--Cborder);
+  transition: background-color 0.3s ease;
+}
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+.divider span {
+  padding: 0 10px;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-container input[type=password],
+.form-container input[type=email],
+.form-container input[type=text] {
+  width: 100%;
+  background-color: var(--Cbackground);
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--Cuser);
+}
+
+input:focus {
+  border-color: var(--Cborder);
+}
+
+.required {
+  color: red;
+}
+
+.btn {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.primary {
+  color: white;
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 15px;
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+.secondary {
+  background-color: var(--Cblue) !important;
+  color: white !important;
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 15px;
+  margin: 0 8px;
+  border: none !important;
+  font-weight: bold;
+}
+.secondary:hover, .secondary:active {
+  background-color: var(--Cpink) !important;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background-color: #d0dde5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+h1, h2, h3, h4,
+button, label {
+  display: block;
+  line-height: 1.1;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-top: 15px;
+  color: var(--Cpink);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.forgot-password,
+.forgot {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--Cuser);
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.existing-user {
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: var(--Cuser);
+}
+
+.homepage-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.homepage-message h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  background: var(--Cblue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.homepage-message p {
+  font-size: 1.25rem;
+  color: #7f8c8d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+header {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.main-logo {
+  width: auto;
+  margin-bottom: 0;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+.footer-img {
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  .homepage-message {
+    padding: 1.5rem;
+    min-height: 50px;
+    width: 55%;
+  }
+  .homepage-message h1 {
+    font-size: 2rem;
+  }
+  .homepage-message p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem 1rem;
+  }
+  .form-container input[type=password],
+  .form-container input[type=email],
+  .form-container input[type=text] {
+    font-size: 15px;
+    height: 2.7em;
+  }
+  .primary,
+  .secondary {
+    padding: 8px 20px;
+    font-size: 15px;
+    margin: 4px 6px;
+  }
+  .homepage-message {
+    width: 85%;
+    padding: 1rem;
+  }
+  .homepage-message h1 {
+    font-size: 1.75rem;
+  }
+  .homepage-message p {
+    font-size: 1rem;
+  }
+  .divider::before,
+  .divider::after {
+    width: 30%;
+  }
+  .toggle-password {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 360px) {
+  .login-container {
+    padding: 1rem 0.5rem;
+  }
+  .form-container input[type=password],
+  .form-container input[type=email],
+  .form-container input[type=text] {
+    font-size: 14px;
+    height: 2.5em;
+  }
+  .primary,
+  .secondary {
+    padding: 7px 16px;
+    font-size: 14px;
+    margin: 4px 4px;
+  }
+  .homepage-message h1 {
+    font-size: 1.5rem;
+  }
+  .homepage-message p {
+    font-size: 0.95rem;
+  }
+  .divider span {
+    font-size: 0.8rem;
+    padding: 0 6px;
+  }
+  .divider::before,
+  .divider::after {
+    width: 25%;
+  }
+  .toggle-password {
+    right: 6px;
+    font-size: 0.85rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
