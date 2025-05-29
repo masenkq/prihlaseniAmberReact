@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import mojeAmberKey from '../images/mojeAmberKey.svg';
 
 import LoginButtons from './LoginButtons';
@@ -18,11 +18,11 @@ function LoginForm() {
 
     return (
         <main className="login-container">
-            <img src={mojeAmberKey} alt="Moje Amber" className="main-logo" />
+            <img src={mojeAmberKey} alt="Moje Amber" className="main-logo"/>
             <form id="login-form" className="form-container" onSubmit={handleSubmit}>
-                <LoginEmail />
-                <LoginPassword />
-                <LoginButtons />
+                <LoginEmail/>
+                <LoginPassword/>
+                <LoginButtons/>
             </form>
         </main>
     );

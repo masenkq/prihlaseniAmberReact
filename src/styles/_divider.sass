@@ -1,0 +1,29 @@
+.divider
+  position: relative
+  text-align: center
+  margin: 0.5rem 0 1rem 0
+  color: var(--Cuser)
+  font-weight: 500
+  cursor: default
+
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    top: 50%
+    width: 40%
+    height: 1px
+    background-color: var(--Cborder)
+    transition: background-color 0.3s ease
+
+  &::before
+    left: 0
+
+  &::after
+    right: 0
+
+  span
+    padding: 0 10px
+    font-size: 0.9rem
+    position: relative
+    z-index: 1

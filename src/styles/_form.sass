@@ -1,0 +1,42 @@
+.form-container
+  position: relative
+  margin-bottom: 20px
+
+  input[type=password],
+  input[type=email],
+  input[type=text]
+    width: 100%
+    background-color: var(--Cbackground)
+    outline: none
+    box-sizing: border-box
+    margin-bottom: 0
+    font-size: 16px
+    border-radius: 5px
+
+input,
+button,
+textarea,
+select
+  font-family: inherit
+  font-size: inherit
+
+textarea:not([rows])
+  min-height: 10em
+
+.password-wrapper
+  position: relative
+
+.toggle-password
+  position: absolute
+  right: 10px
+  top: 50%
+  transform: translateY(-50%)
+  cursor: pointer
+  font-size: 1rem
+  color: var(--Cuser)
+
+input:focus
+  border-color: var(--Cborder)
+
+.required
+  color: red

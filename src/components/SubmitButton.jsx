@@ -1,6 +1,6 @@
-import { Button } from 'antd';
+import {Button} from 'antd';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function SubmitButton() {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ function SubmitButton() {
     };
 
     return (
-        <Button type="primary" htmlType="submit"  className="primary" onClick={handleClick}>
+        <Button type="primary" htmlType="submit" className="primary" onClick={handleClick}>
             Přihlásit se
         </Button>
     );
