@@ -41,7 +41,7 @@ function TodoList() {
     };
 
     const handleDelete = (index) => {
-        const task = doneTasks[index];
+       // const task = doneTasks[index];
         setDoneTasks(doneTasks.filter((_, i) => i !== index));
     };
 
