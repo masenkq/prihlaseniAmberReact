@@ -1,53 +1,29 @@
-.todo-container 
+.todo-container
   max-width: 600px
   margin: 2rem auto
   padding: 2rem
-  background-color: #fff
-  border: 1px solid #eee
+  background: #fff
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
   border-radius: 12px
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
 
-  h2 
-    text-align: center
-    font-weight: bold
-    margin-bottom: 1.5rem
+.input-row
+  display: flex
+  gap: 1rem
+  margin-bottom: 1rem
 
+.task-list
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
 
-  .input-row 
-    display: flex
-    gap: 1rem
-    margin-bottom: 2rem
+.task-list.done
+  opacity: 0.8
 
-    input 
-      flex: 1
-  
+.task-row
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-
-  .task-list 
-    display: flex
-    flex-direction: column
-    gap: 0.75rem
-
-    .ant-checkbox-wrapper 
-      font-size: 1rem
-      padding: 0.5rem
-      border-radius: 6px
-      transition: all 0.3s ease
-
-      &:hover 
-        background-color: #f5f5f5
-    
-  
-
-    &.done .ant-checkbox-wrapper 
-      color: #999
-      text-decoration: line-through
-  
-
-
-  .empty 
-    color: #aaa
-    font-style: italic
-    text-align: center
-
-
+.empty
+  font-style: italic
+  color: #888
