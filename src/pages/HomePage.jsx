@@ -3,12 +3,11 @@ import { Checkbox, Input, Button, Divider } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 import '../styles/_homepage.sass';
 
-function TodoList() {
+function HomePage() {
     const [tasks, setTasks] = useState([]);
     const [doneTasks, setDoneTasks] = useState([]);
     const [newTask, setNewTask] = useState('');
 
-    // 🔄 Načítání z localStorage při načtení komponenty
     useEffect(() => {
         const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
         const storedDone = JSON.parse(localStorage.getItem('doneTasks')) || [];
@@ -100,4 +99,4 @@ function TodoList() {
     );
 }
 
-export default TodoList;
+export default HomePage;
